@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        h1{
+            background-color: black;
+            width: 300px;
+            color: yellowgreen;
+            box-shadow: 0px 0px 20px 5px yellowgreen;
+            text-align: center;
+            margin: 300px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="visit"></h1>
+    
+
+    <script>
+
+
+function visitss(){
+
+let count= localStorage.getItem("visits")
+if(count == null){
+    count=0
+}
+count++;
+
+localStorage.setItem("visits", count)
+
+document.getElementById("visit").innerHTML= `total visits: ${count}`
+
+
+}
+visitss()
+
+
+    </script>
+</body>
+</html>

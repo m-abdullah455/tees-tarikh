@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us Form</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: lightgray;
+        }
+
+        .form {
+            background-color: white;
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form">
+
+        <h2>Contact Us</h2>
+
+        <form>
+
+            <label>Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+
+            <label>Email:</label>
+            <input type="text" id="email" placeholder="Enter your email">
+
+            <label>Password:</label>
+            <input type="password" id="password" placeholder="Enter password">
+
+            <button type="button" onclick="validateForm()">Submit</button>
+
+        </form>
+
+    </div>
+
+    <script>
+
+        function validateForm() {
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            let namePattern = /^[A-Za-z ]+$/;
+            let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            let passwordPattern = /^(?=.*[A-Za-z])(?=.*[0-9]).{8,}$/;
+
+            if (!namePattern.test(name)) {
+                alert("Please enter a valid name");
+            }
+            else if (!emailPattern.test(email)) {
+                alert("Please enter a valid email");
+            }
+            else if (!passwordPattern.test(password)) {
+                alert("Password must have 8 characters, a letter and a number");
+            }
+            else {
+                alert("Form submitted successfully!");
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
+

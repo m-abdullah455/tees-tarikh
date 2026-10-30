@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: black;
+            
+        }
+
+        marquee{
+            border: 1px solid greenyellow;
+            color: yellowgreen;
+            font-size: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 5px;
+            margin-top: 15px;
+            box-shadow: 0px 0px 20px 5px yellowgreen;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <marquee behavior="" direction="">
+        <span id="datetime"></span>
+        <span id="location"></span>
+    </marquee>
+
+    <script>
+        function dateandtime(){
+        let now = new Date().toLocaleString()
+        document.getElementById("datetime").innerHTML=now
+       }
+       dateandtime()
+       setInterval(dateandtime, 1000)
+
+       navigator.geolocation.getCurrentPosition(function(pos){
+        let lat= pos.coords.latitude.toFixed(2)
+        let lon= pos.coords.longitude.toFixed(2)
+        document.getElementById("location").innerHTML=` Location : Latitude is ${lat}, longitude is ${lon} `
+       })
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>SignIn</h1>
+    
+    <label for="">Email:</label><br>
+    <input type="email" id="uemail"><br><br>
+    <label for="">Password:</label><br>
+    <input type="password" id="upassword"><br><br>
+    <button onclick="Login()">Signin</button>
+
+
+    <script>
+        function Login(){
+         let email= document.getElementById("uemail").value     
+         let password= document.getElementById("upassword").value 
+
+         let savedEmail= localStorage.getItem("email")
+         let savedPassword= localStorage.getItem("pass")
+
+         if(email == savedEmail && password == savedPassword){
+            alert("signin successfully")
+            window.location.href="website.html"
+         }else{
+            alert("invalid email or password")
+         }
+         
+        
+
+        }
+    </script>
+    
+</body>
+</html>

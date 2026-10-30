@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cards{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .card{
+            width: 250px;
+            text-align: center;
+            border: 1px solid black;
+        }
+        .card img{
+            width:250px
+        }
+    </style>
+</head>
+<body>
+<h1 style="text-align: center;">Product Page</h1>
+
+<div style="display: flex; justify-content: center; gap: 50px;" class="buttons">
+<button onclick="filter('all')">all</button>
+<button onclick="filter('shoes')">shoes</button>
+<button onclick="filter('watches')">watches</button>
+<button onclick="filter('clothes')">clothes</button>
+
+</div>
+
+<div id="cards">
+
+
+</div>
+
+
+
+<script>
+    let product=[
+     {
+        name:"nike shoes",
+        category:"shoes",
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvmJhfxgKIocTyjuPrEQ4GKmItFFRGWS17NdpgY9BqHA&s=10"
+     },
+     {
+        name:"nike shoes",
+        category:"clothes",
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvmJhfxgKIocTyjuPrEQ4GKmItFFRGWS17NdpgY9BqHA&s=10"
+     },
+     {
+        name:"nike shoes",
+        category:"watches",
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvmJhfxgKIocTyjuPrEQ4GKmItFFRGWS17NdpgY9BqHA&s=10"
+     },
+     {
+        name:"nike shoes",
+        category:"shoes",
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvmJhfxgKIocTyjuPrEQ4GKmItFFRGWS17NdpgY9BqHA&s=10"
+     },
+     {
+        name:"nike shoes",
+        category:"watches",
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvmJhfxgKIocTyjuPrEQ4GKmItFFRGWS17NdpgY9BqHA&s=10"
+     },
+     {
+        name:"nike shoes",
+        category:"clothes",
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvmJhfxgKIocTyjuPrEQ4GKmItFFRGWS17NdpgY9BqHA&s=10"
+     },
+     {
+        name:"nike shoes",
+        category:"shoes",
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvmJhfxgKIocTyjuPrEQ4GKmItFFRGWS17NdpgY9BqHA&s=10"
+     },
+     {
+        name:"nike shoes",
+        category:"watches",
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvmJhfxgKIocTyjuPrEQ4GKmItFFRGWS17NdpgY9BqHA&s=10"
+     },
+     {
+        name:"nike shoes",
+        category:"clothes",
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvmJhfxgKIocTyjuPrEQ4GKmItFFRGWS17NdpgY9BqHA&s=10"
+     },
+     {
+        name:"nike shoes",
+        category:"shoes",
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvmJhfxgKIocTyjuPrEQ4GKmItFFRGWS17NdpgY9BqHA&s=10"
+     },
+
+
+    ]
+
+    function filter(category){
+    let data=""
+
+    for(let i of product){
+if(category === "all" || category === i.category ){
+ data+=`
+ <div class="card">
+ <img src="${i.img}">
+ <h2>${i.name} </h2>
+ <p>${i.category}  </P
+<button> buy now </button>
+</div>
+ 
+`
+}
+
+
+    }
+    document.getElementById("cards").innerHTML=data
+    
+    }
+
+    filter('all')
+
+
+
+
+
+</script>
+
+
+    
+</body>
+</html>

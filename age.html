@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">enter your name</label><br>
+    <input type="text" id="name"><br><br>
+<label for="">date of birth</label><br>
+<input type="date" id="u_age"><br><br>
+<button onclick="age()">calculate</button>
+
+<h2 id="result"></h2>
+
+
+<script>
+    function age(){
+  let name = document.getElementById("name").value      
+  let user_date= new Date(document.getElementById("u_age").value)
+  let current_date= new Date()
+
+  let years= current_date.getFullYear() - user_date.getFullYear();
+  let months= current_date.getMonth() - user_date.getMonth();
+  let days= current_date.getDate() - user_date.getDate()
+
+  if(days <0){
+    months--;
+    days= days+30
+  }
+  if(months <0){
+    years--;
+    months= months + 12
+  }
+
+  document.getElementById("result").innerHTML= `mr ${name} your age is ${years} years ${months}months and ${days}days `
+
+  
+
+
+    }
+</script>
+
+
+    
+</body>
+</html>
